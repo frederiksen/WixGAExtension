@@ -24,7 +24,7 @@ namespace GALibraryCustomActions
           data[row["Id"].ToString()] = row["Id"].ToString();
         }
 
-        session["ShowMessageDeferred"] = data.ToString();
+        session["TrackInstallationDeferred"] = data.ToString();
 
         return ActionResult.Success;
       }

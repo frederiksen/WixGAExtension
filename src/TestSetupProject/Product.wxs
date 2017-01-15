@@ -6,7 +6,7 @@
     <ga:GoogleAnalytics Id="abcdefghijklmnopqrstuvxyz" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MediaTemplate EmbedCab="yes" />
 
 		<Feature Id="ProductFeature" Title="TestSetupProject" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
@@ -23,10 +23,9 @@
 
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
+			<Component Id="ProductComponent">
+        <File Id="dummy.txt" Name="dummy.txt" Source="..\temp\dummy.txt" />
+      </Component>
 		</ComponentGroup>
 	</Fragment>
 </Wix>
