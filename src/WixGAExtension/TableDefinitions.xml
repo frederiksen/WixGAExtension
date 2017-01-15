@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tableDefinitions
+   xmlns="http://schemas.microsoft.com/wix/2006/tables">
+
+  <tableDefinition
+     name="GoogleAnalyticsTable"
+     createSymbols="yes">
+
+    <columnDefinition
+         name="Id"
+         type="string"
+         length="72"
+         primaryKey="yes"
+         category="identifier"
+         description="Primary key for this element" />
+
+  </tableDefinition>
+
+</tableDefinitions>
