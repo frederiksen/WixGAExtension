@@ -3,9 +3,9 @@
 	<Product Id="*" Name="TestSetupProject" Language="1033" Version="1.0.0.0" Manufacturer="TestSetupProject" UpgradeCode="3324c356-da6c-46f7-9acf-e5cd8de6e820">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-    <ga:GoogleAnalytics Id="UA-000000-01" />
-    
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <ga:GoogleAnalytics Id="abcdefghijklmnopqrstuvxyz" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate />
 
 		<Feature Id="ProductFeature" Title="TestSetupProject" Level="1">

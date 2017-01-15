@@ -21,6 +21,23 @@ namespace WixGAExtension
       }
     }
 
+    private Library library;
+
+    public override Library GetLibrary(
+       TableDefinitionCollection tableDefinitions)
+    {
+      if (this.library == null)
+      {
+        this.library =
+           WixExtension.LoadLibraryHelper(
+              Assembly.GetExecutingAssembly(),
+              "WixGAExtension.GALibrary.wixlib",
+               tableDefinitions);
+      }
+
+      return this.library;
+    }
+
     private TableDefinitionCollection tableDefinitions;
 
     public override TableDefinitionCollection TableDefinitions

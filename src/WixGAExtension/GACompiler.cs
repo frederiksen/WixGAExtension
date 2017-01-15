@@ -100,14 +100,18 @@ namespace WixGAExtension
 
       if (!this.Core.EncounteredError)
       {
-        Row superElementRow =
+        Row elementRow =
              this.Core.CreateRow(
                 sourceLineNumber,
                 "GoogleAnalyticsTable");
 
-        superElementRow[0] = googleAnalyticsId;
+        elementRow[0] = googleAnalyticsId;
+
+        this.Core.CreateWixSimpleReferenceRow(
+           sourceLineNumber,
+           "CustomAction",
+           "TrackInstallationImmediate");
       }
     }
-
   }
 }
