@@ -14,6 +14,14 @@
          category="identifier"
          description="Primary key for this element" />
 
+    <columnDefinition
+         name="Tracking"
+         type="string"
+         length="72"
+         primaryKey="no"
+         category="text"
+         description="GA tracking id" />
+
   </tableDefinition>
 
 </tableDefinitions>

@@ -28,10 +28,18 @@
                     use="required"
                     type="xs:string">
         <xs:annotation>
-          <xs:documentation>Google Analytics tracking id</xs:documentation>
+          <xs:documentation>Identifier</xs:documentation>
         </xs:annotation>
       </xs:attribute>
 
+      <xs:attribute name="Tracking"
+                    use="required"
+                    type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Google Analytics tracking id</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    
     </xs:complexType>
   </xs:element>
   

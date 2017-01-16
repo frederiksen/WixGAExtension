@@ -60,6 +60,7 @@ namespace WixGAExtension
       SourceLineNumberCollection sourceLineNumber =
          Preprocessor.GetSourceLineNumbers(node);
 
+      string id = null;
       string googleAnalyticsId = null;
 
       foreach (XmlAttribute attribute in node.Attributes)
@@ -70,7 +71,12 @@ namespace WixGAExtension
           switch (attribute.LocalName)
           {
             case "Id":
-              googleAnalyticsId = this.Core.GetAttributeIdentifierValue(
+              id = this.Core.GetAttributeIdentifierValue(
+                 sourceLineNumber,
+                 attribute);
+              break;
+            case "Tracking":
+              googleAnalyticsId = this.Core.GetAttributeValue(
                  sourceLineNumber,
                  attribute);
               break;
@@ -89,13 +95,22 @@ namespace WixGAExtension
         }
       }
 
-      if (string.IsNullOrEmpty(googleAnalyticsId))
+      if (string.IsNullOrEmpty(id))
       {
         this.Core.OnMessage(
            WixErrors.ExpectedAttribute(
               sourceLineNumber,
               node.Name,
               "Id"));
+      }
+
+      if (string.IsNullOrEmpty(googleAnalyticsId))
+      {
+        this.Core.OnMessage(
+           WixErrors.ExpectedAttribute(
+              sourceLineNumber,
+              node.Name,
+              "Tracking"));
       }
 
       if (!this.Core.EncounteredError)
@@ -105,7 +120,8 @@ namespace WixGAExtension
                 sourceLineNumber,
                 "GoogleAnalyticsTable");
 
-        elementRow[0] = googleAnalyticsId;
+        elementRow[0] = id;
+        elementRow[1] = googleAnalyticsId;
 
         this.Core.CreateWixSimpleReferenceRow(
            sourceLineNumber,

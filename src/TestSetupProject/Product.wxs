@@ -4,7 +4,7 @@
 
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     
-    <ga:GoogleAnalytics Id="UA-90448268-1" />
+    <ga:GoogleAnalytics Id="GATracking" Tracking="UA-90448268-1" />
     
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     
