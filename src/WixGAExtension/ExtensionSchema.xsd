@@ -19,7 +19,7 @@
         <xse:parent namespace="http://schemas.microsoft.com/wix/2006/wi" ref="Fragment" />
       </xs:appinfo>
       <xs:documentation>
-        A custom element for this extension.
+        Use Google Analytics for tracking installations
       </xs:documentation>
     </xs:annotation>
 
@@ -28,7 +28,7 @@
                     use="required"
                     type="xs:string">
         <xs:annotation>
-          <xs:documentation>Google Analytics ID for the element.</xs:documentation>
+          <xs:documentation>Google Analytics tracking id</xs:documentation>
         </xs:annotation>
       </xs:attribute>
 
