@@ -14,14 +14,14 @@ namespace GALibraryCustomActions
 
       try
       {
-        View view = db.OpenView("SELECT `Id` FROM `GoogleAnalyticsTable`");
+        View view = db.OpenView("SELECT `Id`, `Tracking` FROM `GoogleAnalyticsTable`");
         view.Execute();
 
         CustomActionData data = new CustomActionData();
 
         foreach (Record row in view)
         {
-          data[row["Id"].ToString()] = row["Id"].ToString();
+          data[row["Id"].ToString()] = row["Tracking"].ToString();
         }
 
         session["TrackInstallationDeferred"] = data.ToString();

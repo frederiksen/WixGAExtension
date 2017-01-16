@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Fragment>
-    <Binary Id="CA_DLL"
+    <Binary Id="GACaDll"
             SourceFile="$(var.GALibraryCustomActions.TargetDir)GALibraryCustomActions.CA.dll" />
 
     <CustomAction Id="TrackInstallationImmediate"
-                  BinaryKey="CA_DLL"
+                  BinaryKey="GACaDll"
                   DllEntry="TrackInstallationImmediate"
                   Execute="immediate"
                   Return="check" />
 
     <CustomAction Id="TrackInstallationDeferred"
-                  BinaryKey="CA_DLL"
+                  BinaryKey="GACaDll"
                   DllEntry="TrackInstallationDeferred"
                   Execute="deferred"
                   Return="check" />
 
     <InstallExecuteSequence>
-      <Custom Action="TrackInstallationImmediate"
-              Before="TrackInstallationDeferred">
+      <Custom Action="TrackInstallationImmediate" Before="TrackInstallationDeferred">
         NOT Installed
       </Custom>
-
-      <Custom Action="TrackInstallationDeferred"
-              After="InstallInitialize">
+      <Custom Action="TrackInstallationDeferred" After="InstallInitialize">
         NOT Installed
       </Custom>
     </InstallExecuteSequence>
