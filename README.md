@@ -8,3 +8,6 @@ With just one line in your WiX installer you can track installations and uninsta
 And get the result in Google Analytics:
 
 ![alt tag](https://raw.githubusercontent.com/frederiksen/WixGAExtension/master/documentation/GA-screenshot.PNG)
+
+# Future
+Also track information about PC hardware/software. I.e.: CPU, memory, Windows version, ...
