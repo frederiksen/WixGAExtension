@@ -3,7 +3,7 @@
    xmlns="http://schemas.microsoft.com/wix/2006/tables">
 
   <tableDefinition
-     name="GoogleAnalyticsTable"
+     name="GoogleAnalytics"
      createSymbols="yes">
 
     <columnDefinition
@@ -11,11 +11,11 @@
          type="string"
          length="72"
          primaryKey="yes"
-         category="identifier"
+         category="guid"
          description="Primary key for this element" />
 
     <columnDefinition
-         name="Tracking"
+         name="TrackingId"
          type="string"
          length="72"
          primaryKey="no"

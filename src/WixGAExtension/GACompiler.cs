@@ -1,4 +1,5 @@
 ﻿using Microsoft.Tools.WindowsInstallerXml;
+using System;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
@@ -34,7 +35,6 @@ namespace WixGAExtension
       switch (parentElement.LocalName)
       {
         case "Product":
-        case "Fragment":
           switch (element.LocalName)
           {
             case "GoogleAnalytics":
@@ -60,7 +60,6 @@ namespace WixGAExtension
       SourceLineNumberCollection sourceLineNumber =
          Preprocessor.GetSourceLineNumbers(node);
 
-      string id = null;
       string googleAnalyticsId = null;
 
       foreach (XmlAttribute attribute in node.Attributes)
@@ -70,12 +69,7 @@ namespace WixGAExtension
         {
           switch (attribute.LocalName)
           {
-            case "Id":
-              id = this.Core.GetAttributeIdentifierValue(
-                 sourceLineNumber,
-                 attribute);
-              break;
-            case "Tracking":
+            case "TrackingId":
               googleAnalyticsId = this.Core.GetAttributeValue(
                  sourceLineNumber,
                  attribute);
@@ -95,15 +89,6 @@ namespace WixGAExtension
         }
       }
 
-      if (string.IsNullOrEmpty(id))
-      {
-        this.Core.OnMessage(
-           WixErrors.ExpectedAttribute(
-              sourceLineNumber,
-              node.Name,
-              "Id"));
-      }
-
       if (string.IsNullOrEmpty(googleAnalyticsId))
       {
         this.Core.OnMessage(
@@ -118,9 +103,9 @@ namespace WixGAExtension
         Row elementRow =
              this.Core.CreateRow(
                 sourceLineNumber,
-                "GoogleAnalyticsTable");
+                "GoogleAnalytics");
 
-        elementRow[0] = id;
+        elementRow[0] = "{" + Guid.NewGuid().ToString().ToUpper() + "}";
         elementRow[1] = googleAnalyticsId;
 
         this.Core.CreateWixSimpleReferenceRow(

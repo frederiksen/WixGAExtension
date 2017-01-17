@@ -16,7 +16,6 @@
     <xs:annotation>
       <xs:appinfo>
         <xse:parent namespace="http://schemas.microsoft.com/wix/2006/wi" ref="Product" />
-        <xse:parent namespace="http://schemas.microsoft.com/wix/2006/wi" ref="Fragment" />
       </xs:appinfo>
       <xs:documentation>
         Use Google Analytics for tracking installations
@@ -24,15 +23,8 @@
     </xs:annotation>
 
     <xs:complexType>
-      <xs:attribute name="Id"
-                    use="required"
-                    type="xs:string">
-        <xs:annotation>
-          <xs:documentation>Identifier</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
 
-      <xs:attribute name="Tracking"
+      <xs:attribute name="TrackingId"
                     use="required"
                     type="xs:string">
         <xs:annotation>
