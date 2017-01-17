@@ -9,5 +9,8 @@ And get the result in Google Analytics:
 
 ![alt tag](https://raw.githubusercontent.com/frederiksen/WixGAExtension/master/documentation/GA-screenshot.PNG)
 
+# How to use
+https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject
+
 # Future
 Also track information about PC hardware/software. I.e.: CPU, memory, Windows version, ...
