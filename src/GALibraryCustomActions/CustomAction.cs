@@ -20,6 +20,9 @@ namespace GALibraryCustomActions
 
         CustomActionData data = new CustomActionData();
 
+        var productVersion = db.ExecutePropertyQuery("ProductVersion");
+        data["ProductVersion"] = productVersion;
+
         foreach (Record row in view)
         {
           data["TrackingId"] = row["TrackingId"].ToString();
@@ -47,11 +50,21 @@ namespace GALibraryCustomActions
       {
         CustomActionData data = session.CustomActionData;
 
+        var productVersion = data["ProductVersion"]; 
+
         foreach (KeyValuePair<string, string> datum in data)
         {
-          DisplayWarningMessage(
-             session,
-             string.Format("Install {0} => {1}", datum.Key, datum.Value));
+          if (datum.Value.ToUpper().StartsWith("UA-"))
+          {
+            try
+            {
+              GoogleAnalyticsApi.TrackEvent(datum.Value, "WixGAExtension", "Install", productVersion);
+            }
+            catch (Exception ex)
+            {
+              session.Log("GoogleAnalytics tracking error: " + ex.Message);
+            }
+          }
         }
 
         return ActionResult.Success;
@@ -78,6 +91,9 @@ namespace GALibraryCustomActions
         view.Execute();
 
         CustomActionData data = new CustomActionData();
+
+        var productVersion = db.ExecutePropertyQuery("ProductVersion");
+        data["ProductVersion"] = productVersion;
 
         foreach (Record row in view)
         {
@@ -106,11 +122,21 @@ namespace GALibraryCustomActions
       {
         CustomActionData data = session.CustomActionData;
 
+        var productVersion = data["ProductVersion"];
+
         foreach (KeyValuePair<string, string> datum in data)
         {
-          DisplayWarningMessage(
-             session,
-             string.Format("Uninstall {0} => {1}", datum.Key, datum.Value));
+          if (datum.Value.ToUpper().StartsWith("UA-"))
+          {
+            try
+            {
+              GoogleAnalyticsApi.TrackEvent(datum.Value, "WixGAExtension", "Uninstall", productVersion);
+            }
+            catch (Exception ex)
+            {
+              session.Log("GoogleAnalytics tracking error: " + ex.Message);
+            }
+          }
         }
 
         return ActionResult.Success;
@@ -120,17 +146,6 @@ namespace GALibraryCustomActions
         session.Log(ex.Message);
         return ActionResult.Failure;
       }
-    }
-
-    #endregion
-
-    #region Helpers
-
-    private static void DisplayWarningMessage(Session session, string message)
-    {
-      Record record = new Record(0);
-      record[0] = message;
-      session.Message(InstallMessage.Warning, record);
     }
 
     #endregion
