@@ -14,11 +14,10 @@ And get the result in Google Analytics:
 2. Download the WiX extension: [WixGAExtension.dll](https://github.com/frederiksen/WixGAExtension/releases)
 3. From your WiX project reference `WixGAExtension.dll`
 4. Add this namespace: `xmlns:ga="https://github.com/frederiksen/WixGAExtension"`
-5. Add this line under the `Product` node: <ga:GoogleAnalytics TrackingId="UA-90448268-1" /> with your tracking code
+5. Add this line under the `Product` node: `<ga:GoogleAnalytics TrackingId="UA-90448268-1" />` with your tracking code
 6. Done :-)
 
-Here's a test project:
-https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject
+Here's a test project: [TestSetupProject](https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject)
 
 ## Keywords
 `application insights`, `tracking`, `installed base`, `tracking`, `analytics`, `installer`, `runtime intelligence`
