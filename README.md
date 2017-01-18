@@ -9,7 +9,7 @@ And get the result in Google Analytics:
 
 ![Google Analytics](https://raw.githubusercontent.com/frederiksen/WixGAExtension/master/documentation/GA-screenshot.PNG)
 
-# How to use
+## How to use
 1. Create a free Google Analytics project - https://www.google.com/analytics - and get a tracking code
 2. Download the WiX extension: [WixGAExtension.dll](https://github.com/frederiksen/WixGAExtension/releases)
 3. From your WiX project reference `WixGAExtension.dll`
@@ -20,8 +20,8 @@ And get the result in Google Analytics:
 Here's a test project:
 https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject
 
-# Keywords
+## Keywords
 `application insights`, `tracking`, `installed base`, `tracking`, `analytics`, `installer`
 
-# Future
+## Future
 Also track information about PC hardware/software. I.e.: CPU, memory, Windows version, ...
