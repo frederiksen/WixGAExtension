@@ -21,7 +21,7 @@ Here's a test project:
 https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject
 
 ## Keywords
-`application insights`, `tracking`, `installed base`, `tracking`, `analytics`, `installer`
+`application insights`, `tracking`, `installed base`, `tracking`, `analytics`, `installer`, `runtime Intelligence`
 
 ## Future
 Also track information about PC hardware/software. I.e.: CPU, memory, Windows version, ...
