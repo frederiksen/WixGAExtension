@@ -11,7 +11,7 @@ And get the result in Google Analytics:
 
 ## How to use
 1. Create a free Google Analytics project - https://www.google.com/analytics - and get a tracking code
-2. Download the WiX extension: [WixGAExtension.dll](https://github.com/frederiksen/WixGAExtension/releases)
+2. Download the WiX extension: [WixGAExtension.dll](https://github.com/frederiksen/WixGAExtension/releases) and [unblock](https://www.google.com/search?q=Unblocks+files+that+were+downloaded+from+the+Internet&source=lnms&tbm=isch&sa=X) it
 3. From your WiX project reference `WixGAExtension.dll`
 4. Add this namespace: `xmlns:ga="https://github.com/frederiksen/WixGAExtension"`
 5. Add this line under the `Product` node: `<ga:GoogleAnalytics TrackingId="UA-90448268-1" />` with your tracking code
