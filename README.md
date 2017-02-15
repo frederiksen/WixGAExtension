@@ -19,8 +19,5 @@ And get the result in Google Analytics:
 
 Here's a test project: [TestSetupProject](https://github.com/frederiksen/WixGAExtension/tree/master/src/TestSetupProject)
 
-## Keywords
-`application insights`, `tracking`, `installed base`, `tracking`, `analytics`, `installer`, `runtime intelligence`
-
 ## Future
 Also track information about PC hardware/software. I.e.: CPU, memory, Windows version, ...
