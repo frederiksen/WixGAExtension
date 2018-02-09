@@ -35,7 +35,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="wix">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\WiX Toolset v3.10\bin\wix.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\WiX Toolset v3.11\bin\wix.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
