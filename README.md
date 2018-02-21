@@ -9,6 +9,9 @@ And get the result in Google Analytics:
 
 ![Google Analytics](https://raw.githubusercontent.com/frederiksen/WixGAExtension/master/documentation/GA-screenshot.PNG)
 
+## AppVeyor
+[![Build status](https://ci.appveyor.com/api/projects/status/32st082ur467ww5c?svg=true)](https://ci.appveyor.com/project/frederiksen/wixgaextension)
+
 ## How to use
 1. Create a free Google Analytics project - https://www.google.com/analytics - and get a tracking code
 2. Download the WiX extension: [WixGAExtension.dll](https://github.com/frederiksen/WixGAExtension/releases) and [unblock](https://www.google.com/search?q=Unblocks+files+that+were+downloaded+from+the+Internet&source=lnms&tbm=isch&sa=X) it
